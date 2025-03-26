@@ -35,3 +35,17 @@ module dflipflop (output reg Q,Qn,
 	end
   
 endmodule
+
+module xlatch (output reg Q,Qn, 
+               input wire C,D);
+  
+  always @ (C or D)
+  	begin
+  		if (C==1'b1)
+  			begin
+  				Q <= D;
+  				Qn <= ~D;
+  	    	end
+  	end
+  
+endmodule
